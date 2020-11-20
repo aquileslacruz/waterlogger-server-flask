@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "flask-server"
+version = "0.1.0"
+description = ""
+authors = ["Aquiles Lacruz <aquiles.lacruz@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Flask = "^1.1.2"
+Flask-SQLAlchemy = "^2.4.4"
+Flask-Bcrypt = "^0.7.1"
+psycopg2 = "^2.8.6"
+PyJWT = "^1.7.1"
+flask-marshmallow = "^0.14.0"
+marshmallow-sqlalchemy = "^0.24.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = {version = "^20.8b1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

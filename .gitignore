@@ -1,0 +1,11 @@
+# Compilables
+*.pyc
+
+# Cache
+__pycache__/
+
+# VS Code Files
+.vscode/
+
+# SQLite
+sql_app.db
