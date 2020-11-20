@@ -125,6 +125,18 @@ bcrypt = "*"
 Flask = "*"
 
 [[package]]
+name = "flask-cors"
+version = "3.0.9"
+description = "A Flask extension adding a decorator for CORS support"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Flask = ">=0.9"
+Six = "*"
+
+[[package]]
 name = "flask-marshmallow"
 version = "0.14.0"
 description = "Flask + marshmallow for beautiful APIs"
@@ -446,7 +458,7 @@ testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "db3b23074a6ab43601c4ff94471d1f853a1ae9e082741605ccee24ed8d2e0b72"
+content-hash = "3430e78b4f134c1f80d5ddde6a1d9ee06c22bb37552ff79c04b3875a41573e0d"
 
 [metadata.files]
 appdirs = [
@@ -525,6 +537,10 @@ flask = [
 ]
 flask-bcrypt = [
     {file = "Flask-Bcrypt-0.7.1.tar.gz", hash = "sha256:d71c8585b2ee1c62024392ebdbc447438564e2c8c02b4e57b56a4cafd8d13c5f"},
+]
+flask-cors = [
+    {file = "Flask-Cors-3.0.9.tar.gz", hash = "sha256:6bcfc100288c5d1bcb1dbb854babd59beee622ffd321e444b05f24d6d58466b8"},
+    {file = "Flask_Cors-3.0.9-py2.py3-none-any.whl", hash = "sha256:cee4480aaee421ed029eaa788f4049e3e26d15b5affb6a880dade6bafad38324"},
 ]
 flask-marshmallow = [
     {file = "flask-marshmallow-0.14.0.tar.gz", hash = "sha256:bd01a6372cbe50e36f205cfff0fc5dab0b7b662c4c8b2c4fc06a3151b2950950"},

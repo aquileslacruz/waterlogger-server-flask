@@ -13,6 +13,7 @@ psycopg2 = "^2.8.6"
 PyJWT = "^1.7.1"
 flask-marshmallow = "^0.14.0"
 marshmallow-sqlalchemy = "^0.24.1"
+Flask-Cors = "^3.0.9"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

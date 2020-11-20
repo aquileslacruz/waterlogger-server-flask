@@ -50,14 +50,14 @@ def create_user():
 
 
 # GET MY INFO
-@users_blueprint.route('/me/', methods=['GET'])
+@users_blueprint.route('/me/', methods=['GET'], strict_slashes=False)
 @token_required
 def get_my_info(user):
     return UserSchema().dump(user), 200
 
 
 # GET MY FOLLOWERS
-@users_blueprint.route('/followers/', methods=['GET'])
+@users_blueprint.route('/followers/', methods=['GET'], strict_slashes=False)
 @token_required
 def get_my_followers(user):
     followers = crud.get_user_followers(user.id)
@@ -65,7 +65,7 @@ def get_my_followers(user):
 
 
 # GET USERS I FOLLOW
-@users_blueprint.route('/follows/', methods=['GET'])
+@users_blueprint.route('/follow/', methods=['GET'], strict_slashes=False)
 @token_required
 def get_my_follows(user):
     follows = crud.get_user_follows(user.id)
@@ -73,7 +73,7 @@ def get_my_follows(user):
 
 
 # SEARCH BY USERNAME
-@users_blueprint.route('/search/', methods=['GET'])
+@users_blueprint.route('/search/', methods=['GET'], strict_slashes=False)
 @token_required
 def search_users(user):
     q = get_query_param('q', str, required=True)
@@ -84,7 +84,7 @@ def search_users(user):
 
 
 # HANDLE USER ID ROUTE
-@users_blueprint.route('/<int:user_id>/', methods=['GET', 'PUT', 'DELETE'])
+@users_blueprint.route('/<int:user_id>/', methods=['GET', 'PUT', 'DELETE'], strict_slashes=False)
 def handle_user_id(user_id):
     if request.method == 'GET':
         return get_user_by_id(user_id)
@@ -119,7 +119,7 @@ def delete_user_by_id(req_user, user_id: int):
 
 
 # FOLLOW USER
-@users_blueprint.route('/<int:user_id>/follow/', methods=['POST'])
+@users_blueprint.route('/<int:user_id>/follow/', methods=['POST'], strict_slashes=False)
 @token_required
 def follow_user(user, user_id: int):
     crud.follow_user(user, user_id)
@@ -127,7 +127,7 @@ def follow_user(user, user_id: int):
 
 
 # UNFOLLOW USER
-@users_blueprint.route('/<int:user_id>/unfollow/', methods=['POST'])
+@users_blueprint.route('/<int:user_id>/unfollow/', methods=['POST'], strict_slashes=False)
 @token_required
 def unfollow_user(user, user_id: int):
     crud.unfollow_user(user, user_id)

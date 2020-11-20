@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from flask_marshmallow import Marshmallow
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -32,6 +33,7 @@ def initialize_extensions(app):
     global ma
     db.init_app(app)
     bcrypt.init_app(app)
+    CORS(app)
     ma = Marshmallow(app)
 
 
